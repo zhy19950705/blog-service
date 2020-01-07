@@ -48,7 +48,12 @@ module.exports = appInfo => {
 
   config.security = {
     csrf: { enable: false },
-    domainWhiteList: ['http://localhost:3000', 'http://localhost:12580', 'http://120.78.80.132:7001'], //配置白名单
+    domainWhiteList: [
+      'http://localhost:3000', 
+      'http://localhost:12580', 
+      'http://120.78.80.132:7001',
+      'http://120.78.80.132:12580',
+    ], //配置白名单
   };
   config.cors = {
     // origin: '*', //允许所有跨域访问，注释掉则允许上面 白名单 访问
