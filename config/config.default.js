@@ -38,16 +38,23 @@ module.exports = appInfo => {
     agent: false,
   };
 
+  // exports.cluster = {
+  //   listen: {
+  //     port: 7001,
+  //     hostname: '127.0.0.1', // 不建议设置 hostname 为 '0.0.0.0'，它将允许来自外部网络和来源的连接，请在知晓风险的情况下使用
+  //     // path: '/var/run/egg.sock',
+  //   }
+  // }
+
   config.security = {
-    csrf: {
-      enable: false
-    },
-    domainWhiteList: [ '*' ]
-  }
+    csrf: { enable: false },
+    domainWhiteList: ['http://localhost:3000', 'http://localhost:12580', 'http://120.78.80.132:7001s'], //配置白名单
+  };
   config.cors = {
-    origin: '*',
-    allowMethods: 'GET, HEAD, PUT, POST, DELETE, PATCH, OPTIONS'
-  }
+    // origin: '*', //允许所有跨域访问，注释掉则允许上面 白名单 访问
+    credentials: true,  //允许Cook可以跨域
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+  };
 
   // add your user config here
   const userConfig = {
