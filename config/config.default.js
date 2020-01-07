@@ -52,6 +52,7 @@ module.exports = appInfo => {
       'http://localhost:3000', 
       'http://localhost:12580', 
       'http://120.78.80.132:7001',
+      'http://120.78.80.132:8001',
       'http://120.78.80.132:12580',
     ], //配置白名单
   };
